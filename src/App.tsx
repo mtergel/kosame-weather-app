@@ -1,5 +1,5 @@
 import React from "react";
-import { extendTheme, ChakraProvider, Box } from "@chakra-ui/react";
+import { extendTheme, ChakraProvider } from "@chakra-ui/react";
 import Card from "./components/Card";
 // theme
 const config = {
