@@ -143,7 +143,6 @@ const Card: React.FC<CardProps> = () => {
     // Getting min Temp
     const getMinTemps = (currentData: HourlyDataPoint[]) =>
       Math.round(Math.min(...getTemps(currentData)));
-
     return (
       <Box
         width="250px"
