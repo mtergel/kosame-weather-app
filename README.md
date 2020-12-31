@@ -16,7 +16,10 @@ You will also see any lint errors in the console.
 
 ### `yarn build`
 
-Builds the app for production to the `dist` folder.\
-It will a Chrome Extension.
+Builds the app for production to the `build` folder.\
+
+### `yarn build-chrome-extension`
+
+Builds the app for production (chrome-extension) to the `dist` folder.\
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
