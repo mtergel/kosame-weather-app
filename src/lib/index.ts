@@ -3,7 +3,7 @@ import { WeatherIcon } from "../types/weather";
 const DARKSKY_API_KEY = process.env.REACT_APP_DARKSKY_KEY;
 
 const getWeather = async (latitude: string, longitude: string) => {
-  const DARKSKY_URI = `https://api.darksky.net/forecast/${DARKSKY_API_KEY}/${latitude},${longitude}?UNITS=ca`;
+  const DARKSKY_URI = `https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/${DARKSKY_API_KEY}/${latitude},${longitude}?UNITS=ca`;
 
   return await axios.get(DARKSKY_URI).then((res) => res.data);
 };

@@ -59,6 +59,8 @@ const Card: React.FC<CardProps> = () => {
   const toggleEditMode = () => {
     setLocationEdit((prevState) => !prevState);
   };
+
+  //eslint-disable-next-line
   const delayedUpdate = useCallback(
     debounce(
       (_coords: { lat: number; long: number }) => setCoords(_coords),
@@ -121,7 +123,13 @@ const Card: React.FC<CardProps> = () => {
   }, [coords]);
 
   if (loading) {
-    return <Spinner />;
+    return (
+      <Box width="250px" mt={-1} px={1} height="400px" py={4} color="#FFFDFD">
+        <Center>
+          <Spinner />
+        </Center>
+      </Box>
+    );
   }
 
   if (weather) {
@@ -140,6 +148,8 @@ const Card: React.FC<CardProps> = () => {
       <Box
         width="250px"
         position="relative"
+        mt={-1}
+        px={1}
         py={4}
         color="#FFFDFD"
         display="flex"
@@ -253,9 +263,7 @@ const Card: React.FC<CardProps> = () => {
                           {Math.round(item.temperature)}˚
                         </Badge>
 
-                        <Text size="sm" pl={2}>
-                          {item.summary}
-                        </Text>
+                        <Text fontSize="xs">{item.summary}</Text>
                       </Flex>
                     ))}
                 </AccordionPanel>
