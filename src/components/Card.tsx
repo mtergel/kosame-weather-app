@@ -38,6 +38,8 @@ interface DarkSkyType {
   hourly: HourlyDataBlock;
 }
 
+const DARKSKY_API_KEY = process.env.REACT_APP_DARKSKY_KEY;
+
 const Card: React.FC<CardProps> = () => {
   const [weather, setWeather] = useState<DarkSkyType | undefined>(undefined);
   const [loading, setLoading] = useState(false);
@@ -344,7 +346,14 @@ const Card: React.FC<CardProps> = () => {
       </Box>
     );
   } else {
-    return null;
+    return (
+      <Box>
+        Call failed with
+        {coords?.lat}
+        {coords?.long}
+        {DARKSKY_API_KEY}
+      </Box>
+    );
   }
 };
 export default Card;
